@@ -14,7 +14,7 @@ function settle(fn, done){
       settled.value = result;
     }
 
-    done(undefined, settled);
+    done(null, settled);
   });
 }
 
