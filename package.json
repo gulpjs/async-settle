@@ -1,6 +1,6 @@
 {
   "name": "async-settle",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Settle your async functions - when you need to know all your parallel functions are complete (success or failure)",
   "main": "index.js",
   "directories": {
