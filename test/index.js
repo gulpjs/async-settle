@@ -1,31 +1,37 @@
 'use strict';
 
-var test = require('tap').test;
+var lab = exports.lab = require('lab').script();
+var describe = lab.describe;
+var it = lab.it;
+var before = lab.before;
+var beforeEach = lab.beforeEach;
+var after = lab.after;
+var afterEach = lab.afterEach;
+var expect = require('lab').expect;
 
 var settle = require('../');
 
-test('should transform success into settled success values', function(t){
-  var val = 'value to be settled';
-  settle(function(done){
-    done(null, val);
-  }, function(error, result){
-    t.notOk(error, 'error should be undefined');
-    t.ok(result, 'result should be defined');
-    t.ok(result.state === 'success', 'state should be "success"');
-    t.equal(result.value, val, 'value should be the success value');
-    t.end();
-  });
-});
+describe('asyncSettle', function(){
 
-test('should transform errors into settled success values', function(t){
-  var err = new Error('Error to be settled');
-  settle(function(done){
-    done(err);
-  }, function(error, result){
-    t.notOk(error, 'error should be undefined');
-    t.ok(result, 'result should be defined');
-    t.ok(result.state === 'error', 'state should be "error"');
-    t.equal(result.value, err, 'value should be the error value');
-    t.end();
+  it('should transform success into settled success values', function(done){
+    var val = 'value to be settled';
+    settle(function(done){
+      done(null, val);
+    }, function(err, result){
+      expect(result).to.have.property('state', 'success');
+      expect(result).to.have.property('value', val);
+      done(err);
+    });
+  });
+
+  it('should transform errors into settled success values', function(done){
+    var error = new Error('Error to be settled');
+    settle(function(done){
+      done(error);
+    }, function(err, result){
+      expect(result).to.have.property('state', 'error');
+      expect(result).to.have.property('value', error);
+      done(err);
+    });
   });
 });
