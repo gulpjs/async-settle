@@ -53,7 +53,11 @@ Executed in the context of [`async-done`](https://github.com/phated/async-done),
 
 Completion is handled by [`async-done` completion and error resolution](https://github.com/phated/async-done#completion-and-error-resolution).
 
-#### `callback` will be called with a settled object.
+#### `callback(error, result)`
+
+Called on completion of `fn` and recieves a settled object as the `result` argument.
+
+Teh `error` argument will always be `null`.
 
 #### Settled Object
 
