@@ -7,7 +7,7 @@ var before = lab.before;
 var beforeEach = lab.beforeEach;
 var after = lab.after;
 var afterEach = lab.afterEach;
-var expect = require('lab').expect;
+var expect = require('code').expect;
 
 var settle = require('../');
 
@@ -18,8 +18,10 @@ describe('asyncSettle', function(){
     settle(function(done){
       done(null, val);
     }, function(err, result){
-      expect(result).to.have.property('state', 'success');
-      expect(result).to.have.property('value', val);
+      expect(result).to.include({
+        state: 'success',
+        value: val
+      });
       done(err);
     });
   });
@@ -29,8 +31,10 @@ describe('asyncSettle', function(){
     settle(function(done){
       done(error);
     }, function(err, result){
-      expect(result).to.have.property('state', 'error');
-      expect(result).to.have.property('value', error);
+      expect(result).to.include({
+        state: 'error',
+        value: error
+      });
       done(err);
     });
   });
