@@ -14,7 +14,6 @@
   "main": "index.js",
   "scripts": {
     "test": "lab -cv",
-    "pretest": "npm run lint",
     "lint": "eslint . && jscs *.js test/"
   },
   "dependencies": {
