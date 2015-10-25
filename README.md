@@ -1,7 +1,7 @@
 async-settle
 ============
 
-[![build status](https://secure.travis-ci.org/phated/async-settle.png)](http://travis-ci.org/phated/async-settle)
+[![build status](https://secure.travis-ci.org/gulpjs/async-settle.png)](http://travis-ci.org/gulpjs/async-settle)
 
 Settle your async functions - when you need to know all your parallel functions are complete (success or failure)
 
@@ -49,9 +49,9 @@ Takes a function to execute (`fn`) and a function to call on completion (`callba
 
 Optionally takes a callback to call when async tasks are complete.
 
-Executed in the context of [`async-done`](https://github.com/phated/async-done), with all errors and results being settled.
+Executed in the context of [`async-done`](https://github.com/gulpjs/async-done), with all errors and results being settled.
 
-Completion is handled by [`async-done` completion and error resolution](https://github.com/phated/async-done#completion-and-error-resolution).
+Completion is handled by [`async-done` completion and error resolution](https://github.com/gulpjs/async-done#completion-and-error-resolution).
 
 #### `callback(error, result)`
 

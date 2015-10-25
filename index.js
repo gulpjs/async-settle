@@ -2,11 +2,11 @@
 
 var asyncDone = require('async-done');
 
-function settle(fn, done){
-  asyncDone(fn, function(error, result){
+function settle(fn, done) {
+  asyncDone(fn, function(error, result) {
     var settled = {};
 
-    if(error != null){
+    if (error != null) {
       settled.state = 'error';
       settled.value = error;
     } else {
