@@ -34,5 +34,8 @@
     "complete",
     "error",
     "parallel"
+  ],
+  "files": [
+    "index.js"
   ]
 }
