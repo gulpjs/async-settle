@@ -1,12 +1,10 @@
 sudo: false
-
 language: node_js
-
 node_js:
-  - '0.10'
+  - '6'
+  - '5'
+  - '4'
   - '0.12'
-  - 'stable'
-
-script:
-  - npm test
-  - npm run lint
+  - '0.10'
+after_script:
+  - npm run coveralls

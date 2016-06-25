@@ -1,9 +1,6 @@
 'use strict';
 
-var lab = exports.lab = require('lab').script();
-var describe = lab.describe;
-var it = lab.it;
-var expect = require('code').expect;
+var expect = require('expect');
 
 var settle = require('../');
 
@@ -14,7 +11,7 @@ describe('asyncSettle', function() {
     settle(function(done) {
       done(null, val);
     }, function(err, result) {
-      expect(result).to.include({
+      expect(result).toInclude({
         state: 'success',
         value: val,
       });
@@ -27,7 +24,7 @@ describe('asyncSettle', function() {
     settle(function(done) {
       done(error);
     }, function(err, result) {
-      expect(result).to.include({
+      expect(result).toInclude({
         state: 'error',
         value: error,
       });
