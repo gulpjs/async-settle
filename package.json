@@ -7,11 +7,13 @@
     "test": "test"
   },
   "scripts": {
-    "test": "tap ./test"
+    "test": "lab -cv"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/phated/async-settle"
+  "dependencies": {
+    "async-done": "^0.4.0"
+  },
+  "devDependencies": {
+    "lab": "^4.2.0"
   },
   "keywords": [
     "settle",
@@ -26,11 +28,5 @@
   "bugs": {
     "url": "https://github.com/phated/async-settle/issues"
   },
-  "homepage": "https://github.com/phated/async-settle",
-  "devDependencies": {
-    "tap": "^0.4.8"
-  },
-  "dependencies": {
-    "async-done": "^0.4.0"
-  }
+  "homepage": "https://github.com/phated/async-settle"
 }
