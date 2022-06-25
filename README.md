@@ -21,13 +21,16 @@ Will run call the function on `nextTick`. This will cause all functions to be as
 ```js
 var asyncSettle = require('async-settle');
 
-asyncSettle(function(done){
-  // do async things
-  done(null, 2);
-}, function(error, result){
-  // `error` will ALWAYS be null on execution of the first function.
-  // `result` will ALWAYS be a settled object with the result or error of the first function.
-});
+asyncSettle(
+  function (done) {
+    // do async things
+    done(null, 2);
+  },
+  function (error, result) {
+    // `error` will ALWAYS be null on execution of the first function.
+    // `result` will ALWAYS be a settled object with the result or error of the first function.
+  }
+);
 ```
 
 ### Failed completion
@@ -35,13 +38,16 @@ asyncSettle(function(done){
 ```js
 var asyncSettle = require('async-settle');
 
-asyncSettle(function(done){
-  // do async things
-  done(new Error('Some Error Occurred'));
-}, function(error, result){
-  // `error` will ALWAYS be null on execution of the first function.
-  // `result` will ALWAYS be a settled object with the result or error of the first function.
-});
+asyncSettle(
+  function (done) {
+    // do async things
+    done(new Error('Some Error Occurred'));
+  },
+  function (error, result) {
+    // `error` will ALWAYS be null on execution of the first function.
+    // `result` will ALWAYS be a settled object with the result or error of the first function.
+  }
+);
 ```
 
 ## API
@@ -75,7 +81,6 @@ Settled values have two properties, `state` and `value`.
 ## License
 
 MIT
-
 
 <!-- prettier-ignore-start -->
 [downloads-image]: https://img.shields.io/npm/dm/async-settle.svg?style=flat-square
