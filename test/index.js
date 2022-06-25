@@ -11,10 +11,12 @@ describe('asyncSettle', function() {
     settle(function(done) {
       done(null, val);
     }, function(err, result) {
-      expect(result).toInclude({
-        state: 'success',
-        value: val,
-      });
+      expect(result).toEqual(
+        expect.objectContaining({
+          state: 'success',
+          value: val,
+        })
+      );
       done(err);
     });
   });
@@ -24,10 +26,12 @@ describe('asyncSettle', function() {
     settle(function(done) {
       done(error);
     }, function(err, result) {
-      expect(result).toInclude({
-        state: 'error',
-        value: error,
-      });
+      expect(result).toEqual(
+        expect.objectContaining({
+          state: 'error',
+          value: error,
+        })
+      );
       done(err);
     });
   });
