@@ -1,6 +1,6 @@
 {
   "name": "async-settle",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Settle an async function.",
   "author": "Gulp Team <team@gulpjs.com> (http://gulpjs.com/)",
   "contributors": [
