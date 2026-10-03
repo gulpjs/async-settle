@@ -19,7 +19,7 @@ Will run call the function on `nextTick`. This will cause all functions to be as
 ### Successful completion
 
 ```js
-var asyncSettle = require('async-settle');
+var asyncSettle = require("async-settle");
 
 asyncSettle(
   function (done) {
@@ -29,24 +29,24 @@ asyncSettle(
   function (error, result) {
     // `error` will ALWAYS be null on execution of the first function.
     // `result` will ALWAYS be a settled object with the result or error of the first function.
-  }
+  },
 );
 ```
 
 ### Failed completion
 
 ```js
-var asyncSettle = require('async-settle');
+var asyncSettle = require("async-settle");
 
 asyncSettle(
   function (done) {
     // do async things
-    done(new Error('Some Error Occurred'));
+    done(new Error("Some Error Occurred"));
   },
   function (error, result) {
     // `error` will ALWAYS be null on execution of the first function.
     // `result` will ALWAYS be a settled object with the result or error of the first function.
-  }
+  },
 );
 ```
 
