@@ -78,6 +78,16 @@ Settled values have two properties, `state` and `value`.
 
 `value` will be the value passed to original callback.
 
+## Strict No LLM / No AI Policy
+
+No LLMs for issues.
+
+No LLMs for patches / pull requests.
+
+No LLMs for comments on the bug tracker, including translation.
+
+English is encouraged, but not required. You are welcome to post in your native language and rely on others to have their own translation tools of choice to interpret your words.
+
 ## License
 
 MIT
@@ -87,14 +97,9 @@ MIT
 [npm-url]: https://www.npmjs.com/package/async-settle
 [npm-image]: https://img.shields.io/npm/v/async-settle.svg?style=flat-square
 
-[ci-url]: https://github.com/gulpjs/async-settle/actions?query=workflow:dev
-[ci-image]: https://img.shields.io/github/actions/workflow/status/gulpjs/async-settle/dev.yml?branch=master&style=flat-square
+[ci-url]: https://github.com/gulpjs/async-settle/actions/workflows/dev.yml
+[ci-image]: https://img.shields.io/github/actions/workflow/status/gulpjs/async-settle/dev.yml?style=flat-square
 
 [coveralls-url]: https://coveralls.io/r/gulpjs/async-settle
-[coveralls-image]: https://img.shields.io/coveralls/gulpjs/async-settle/master.svg?style=flat-square
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore-start -->
-[async-done]: https://github.com/gulpjs/async-done
-[completions]: https://github.com/gulpjs/async-done#completion-and-error-resolution
+[coveralls-image]: https://img.shields.io/coveralls/gulpjs/async-settle/main.svg?style=flat-square
 <!-- prettier-ignore-end -->
