@@ -93,6 +93,9 @@ English is encouraged, but not required. You are welcome to post in your native 
 MIT
 
 <!-- prettier-ignore-start -->
+[async-done]: https://github.com/gulpjs/async-done
+[completions]: https://github.com/gulpjs/async-done#completion-and-error-resolution
+
 [downloads-image]: https://img.shields.io/npm/dm/async-settle.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/async-settle
 [npm-image]: https://img.shields.io/npm/v/async-settle.svg?style=flat-square
