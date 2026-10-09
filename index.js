@@ -1,16 +1,16 @@
-'use strict';
+"use strict";
 
-var asyncDone = require('async-done');
+var asyncDone = require("async-done");
 
 function settle(fn, done) {
   asyncDone(fn, function (error, result) {
     var settled = {};
 
     if (error != null) {
-      settled.state = 'error';
+      settled.state = "error";
       settled.value = error;
     } else {
-      settled.state = 'success';
+      settled.state = "success";
       settled.value = result;
     }
 

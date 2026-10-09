@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
-var expect = require('expect');
+var expect = require("expect");
 
-var settle = require('../');
+var settle = require("../");
 
-describe('asyncSettle', function () {
-  it('should transform success into settled success values', function (done) {
-    var val = 'value to be settled';
+describe("asyncSettle", function () {
+  it("should transform success into settled success values", function (done) {
+    var val = "value to be settled";
     settle(
       function (done) {
         done(null, val);
@@ -14,17 +14,17 @@ describe('asyncSettle', function () {
       function (err, result) {
         expect(result).toEqual(
           expect.objectContaining({
-            state: 'success',
+            state: "success",
             value: val,
-          })
+          }),
         );
         done(err);
-      }
+      },
     );
   });
 
-  it('should transform errors into settled success values', function (done) {
-    var error = new Error('Error to be settled');
+  it("should transform errors into settled success values", function (done) {
+    var error = new Error("Error to be settled");
     settle(
       function (done) {
         done(error);
@@ -32,12 +32,12 @@ describe('asyncSettle', function () {
       function (err, result) {
         expect(result).toEqual(
           expect.objectContaining({
-            state: 'error',
+            state: "error",
             value: error,
-          })
+          }),
         );
         done(err);
-      }
+      },
     );
   });
 });
