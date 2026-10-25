@@ -1,41 +1,38 @@
 "use strict";
 
-var expect = require("expect");
+var assert = require("node:assert");
+var { describe, it } = require("node:test");
 
 var settle = require("../");
 
 describe("asyncSettle", function () {
-  it("should transform success into settled success values", function (done) {
+  it("should transform success into settled success values", function (t, done) {
     var val = "value to be settled";
     settle(
-      function (done) {
-        done(null, val);
+      function (cb) {
+        cb(null, val);
       },
       function (err, result) {
-        expect(result).toEqual(
-          expect.objectContaining({
-            state: "success",
-            value: val,
-          }),
-        );
+        assert.deepStrictEqual(result, {
+          state: "success",
+          value: val,
+        });
         done(err);
       },
     );
   });
 
-  it("should transform errors into settled success values", function (done) {
+  it("should transform errors into settled success values", function (t, done) {
     var error = new Error("Error to be settled");
     settle(
-      function (done) {
-        done(error);
+      function (cb) {
+        cb(error);
       },
       function (err, result) {
-        expect(result).toEqual(
-          expect.objectContaining({
-            state: "error",
-            value: error,
-          }),
-        );
+        assert.deepStrictEqual(result, {
+          state: "error",
+          value: error,
+        });
         done(err);
       },
     );
